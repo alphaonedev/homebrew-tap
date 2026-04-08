@@ -1,26 +1,26 @@
 class AiMemory < Formula
   desc "AI-agnostic persistent memory system — MCP server, HTTP API, and CLI"
   homepage "https://alphaonedev.github.io/ai-memory-mcp/"
-  version "0.5.0"
+  version "0.5.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-aarch64-apple-darwin.tar.gz"
-      sha256 "14321a6c94b2b059fe30ce55490fab32b5a6e76762c5c9c63ee62262c916e4fa"
+      sha256 "9c13823c6152c8a9dfb1a4ef990c0ab16b4272c56ae6ec4ec290b9847f91edab"
     else
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-x86_64-apple-darwin.tar.gz"
-      sha256 "a1f9d0ab3ddf1f661c86d7deb14e3ff86e719e2abde5f105f6433a05b520bdcc"
+      sha256 "46d4dceaf1eec51f48be5726faf3d9de0e33af03807bd2d38a2eecaa783ddbb5"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2d8eeb0cda981e7727f180d8ed19a27304a017f8c8cafd665c42fa363d2e83de"
+      sha256 "6765e79bd56ed33642515c24d809ecd494aea423f2563fd9947253b5d5ddd4b6"
     else
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "870691d5f4786b8b09bd553aed8f1a8f800d95e04817debe4b4e6e6ea9a5b85c"
+      sha256 "3ee04094aa6e26ebfd9a12d80db0ed2951ed6cd81403a6de5faea7f33db0b79a"
     end
   end
 
@@ -30,7 +30,7 @@ class AiMemory < Formula
 
   def caveats
     <<~EOS
-      To use with an MCP-compatible AI (Claude Code, Codex CLI, Gemini CLI, etc.),
+      To use with an MCP-compatible AI (Claude Code, Codex CLI, Gemini CLI, OpenClaw, etc.),
       add to your AI platform's MCP config:
 
         {
