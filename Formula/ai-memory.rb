@@ -1,26 +1,26 @@
 class AiMemory < Formula
   desc "AI-agnostic persistent memory system — MCP server, HTTP API, and CLI"
   homepage "https://alphaonedev.github.io/ai-memory-mcp/"
-  version "0.5.4.4"
+  version "0.5.4.5"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-aarch64-apple-darwin.tar.gz"
-      sha256 "e4294488f6c0196af01ecb51ff73e07f6f151a24f6e45fc51b796e5b900c317f"
+      sha256 "a9e85263396a1a8e6507d4bf7d4f05ee29d03ae8971ae4bb54d34f349d3dd5fe"
     else
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-x86_64-apple-darwin.tar.gz"
-      sha256 "351d4fc14eda2cccb24861b3f142e247603b4293ecec599ac7aa5cf04b8800b9"
+      sha256 "0d1948c56826bf14f5fe132f5c82d1f10c965d2ffd09d0cc8024253301aa0232"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7cbc91e2b7b2ed5d34814741622f8a02dc2042b2e71011b83f084312de06c3f3"
+      sha256 "332f78d2a107b0134dc9f00538fd0e801756ec6da0318aca45cfc55537119f0f"
     else
       url "https://github.com/alphaonedev/ai-memory-mcp/releases/download/v#{version}/ai-memory-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2c0abb33d7bd418c827a0742624e953723771ef5ac75385b16c1cb3821058a0a"
+      sha256 "5c1e06ad960df49a0a7aa6850c4a1cf581c9474b8e08162abc2e4bb48f91bced"
     end
   end
 
