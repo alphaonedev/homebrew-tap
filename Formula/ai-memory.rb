@@ -28,7 +28,25 @@ class AiMemory < Formula
     bin.install "ai-memory"
   end
 
+  def caveats
+    <<~EOS
+      To use with an MCP-compatible AI (Claude Code, Codex CLI, Gemini CLI, OpenClaw, etc.),
+      add to your AI platform's MCP config:
+
+        {
+          "mcpServers": {
+            "memory": {
+              "command": "ai-memory",
+              "args": ["--db", "~/.local/share/ai-memory/memories.db", "mcp"]
+            }
+          }
+        }
+
+      Documentation: https://alphaonedev.github.io/ai-memory-mcp/
+    EOS
+  end
+
   test do
-    assert_match version.to_s, shell_output("#{bin}/ai-memory --version")
+    system "#{bin}/ai-memory", "stats", "--json", "--db", testpath/"test.db"
   end
 end
